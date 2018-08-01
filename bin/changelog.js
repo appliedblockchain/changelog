@@ -37,7 +37,7 @@ for (let i = 0; i < tags.length - 1; i++) {
   const tag = tags[i]
   const tag2 = tags[i + 1]
   const date = dates[i]
-  puts(`\n## ${tag} (${date})\n`)
+  puts(`\n## [${tag}](../../compare/${tag2}...${tag}) (${date})\n`)
   let logs = logsOf(tag2, tag).filter(isValuableLog)
   if (!logs.length) {
     logs = [ 'No changes.' ]
