@@ -1,6 +1,6 @@
 {
   "name": "@appliedblockchain/changelog",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "npx @appliedblockchain/changelog > Changelog.md",
   "main": "changelog",
   "bin": {
