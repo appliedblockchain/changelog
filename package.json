@@ -1,13 +1,12 @@
 {
   "name": "@appliedblockchain/changelog",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "npx @appliedblockchain/changelog > Changelog.md",
   "main": "changelog",
   "bin": {
     "changelog": "bin/changelog.js"
   },
-  "scripts": {
-  },
+  "scripts": {},
   "keywords": [],
   "author": "",
   "license": "UNLICENSED"
