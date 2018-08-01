@@ -6,7 +6,9 @@
   "bin": {
     "changelog": "bin/changelog.js"
   },
-  "scripts": {},
+  "scripts": {
+    "changelog": "npx @appliedblockchain/changelog changelog > Changelog.md"
+  },
   "keywords": [],
   "author": "",
   "license": "UNLICENSED"
