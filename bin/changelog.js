@@ -2,10 +2,11 @@
 
 const { execSync } = require('child_process')
 
+const isSemver = _1 => /^v?\d+\.\d+\.\d+$/.test(_1)
 const puts = console.log
 const sh = cmd => execSync(cmd, { encoding: 'utf8' }).trim()
 const linesOf = cmd => sh(cmd).split('\n').map(_1 => _1.trim()).filter(Boolean)
-const tagsOf = () => linesOf('git tag --sort=-creatordate')
+const tagsOf = () => linesOf('git tag --sort=-creatordate').filter(isSemver)
 const dateOf = tag => sh(`git log -1 --format=%ai ${tag} | awk '{ print $1 }'`)
 const logsOf = (tag1, tag2) => linesOf(`git log ${tag1}...${tag2} --pretty=format:'%s'`).filter(Boolean)
 const withDot = $1 => $1.endsWith('.') ? $1 : `${$1}.`
@@ -16,7 +17,7 @@ const isValuableLog = log => {
   if (typeof log !== 'string') {
     return false
   }
-  if (/^\d+\.\d+\.\d+$/.test(log)) {
+  if (isSemver(log)) {
     return false
   }
   if (log.startsWith('Merge pull request #')) {
