@@ -1,5 +1,10 @@
 # Changelog
 
+## [v1.0.4](../../compare/v1.0.3...v1.0.4) (2018-08-08)
+
+* Adding filter for tags matching semver regexp.
+* Updating changelog.
+
 ## [v1.0.3](../../compare/v1.0.2...v1.0.3) (2018-08-01)
 
 * Self hosting.
