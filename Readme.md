@@ -1,7 +1,7 @@
 
 ```
 # Install in your project:
-npx jq '.scripts.changelog = "npx @appliedblockchain/changelog changelog > Changelog.md"' package.json > package.json.jq && mv package.json.jq package.json
+npx jq '.scripts.changelog = "npx @appliedblockchain/changelog > Changelog.md"' package.json > package.json.jq && mv package.json.jq package.json
 
 # Regenerate changelog:
 npm run changelog

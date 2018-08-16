@@ -3,13 +3,12 @@
   "version": "1.0.4",
   "description": "npx @appliedblockchain/changelog > Changelog.md",
   "main": "changelog",
-  "bin": {
-    "changelog": "bin/changelog.js"
-  },
+  "bin": "bin/changelog.js",
   "scripts": {
-    "changelog": "npx @appliedblockchain/changelog changelog > Changelog.md"
+    "changelog": "npx @appliedblockchain/changelog > Changelog.md"
   },
   "keywords": [],
   "author": "",
+  "repository": "appliedblockchain/changelog",
   "license": "UNLICENSED"
 }
