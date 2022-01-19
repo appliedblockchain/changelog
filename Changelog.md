@@ -1,5 +1,12 @@
 # Changelog
 
+## [v1.2.1](../../compare/v1.2.0...v1.2.1) (2022-01-19)
+
+* Fix changelog for branches other than master.
+* Adding license.
+* Updating license.
+* Updating changelog.
+
 ## [v1.2.0](../../compare/v1.1.0...v1.2.0) (2020-03-05)
 
 * Adding support for custom, per-project "plugin".
