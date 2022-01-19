@@ -7,7 +7,7 @@ const { execSync } = require('child_process')
 const isSemver = _1 => /^v?\d+\.\d+\.\d+$/.test(_1)
 const puts = console.log
 const sh = cmd => execSync(cmd, { encoding: 'utf8' }).trim()
-const tagsOf = () => linesOf('git tag --sort=-creatordate').filter(isSemver)
+const tagsOf = (branch) => linesOf(`git tag --merged ${branch} --sort=-creatordate`).filter(isSemver)
 const dateOf = tag => sh(`git log -1 --format=%ai ${tag} | awk '{ print $1 }'`)
 const withDot = $1 => $1.endsWith('.') ? $1 : `${$1}.`
 const withCapital = $1 => $1.charAt(0).toUpperCase() + $1.slice(1)
@@ -38,7 +38,8 @@ const isValuableLog = log => {
 
 puts('# Changelog')
 
-const tags = tagsOf()
+const branchName = sh('git rev-parse --symbolic-full-name --abbrev-ref HEAD')
+const tags = tagsOf(branchName)
 const dates = tags.map(dateOf)
 
 for (let i = 0; i < tags.length - 1; i++) {
